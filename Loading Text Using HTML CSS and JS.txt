@@ -1,0 +1,144 @@
+<html>
+  <body>
+    <div class="loading">
+      <div class="l1">L</div>
+      <div class="l2">o</div>
+      <div class="l3">a</div>
+      <div class="l4">d</div>
+      <div class="l5">i</div>
+      <div class="l6">n</div>
+      <div class="l7">g</div>
+      <div class="l8">.</div>
+      <div class="l9">.</div>
+      <div class="l10">.</div>
+    </div>
+    <style>
+        body {
+  background: black;
+  color: white;
+  font-family: "Droid Sans";
+}
+@keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+  }
+  30% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+@keyframes jump {
+  0% {
+    transform: translateY(0px);
+  }
+  5% {
+    transform: translateY(-10px);
+  }
+  10% {
+    transform: translateY(0px);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes color {
+  from {
+    color: white;
+  }
+  to {
+    color: red;
+  }
+}
+.loading {
+  font-size: 1.5em;
+  width: 170px;
+  margin: 60px auto;
+  perspective: 90px;
+}
+.loading div {
+  display: inline-block;
+  animation-name: flip;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50% 8px;
+  transform-style: preserve-3d;
+}
+.loading .l1 {
+  animation-delay: 0.1s;
+}
+.loading .l2 {
+  animation-delay: 0.2s;
+}
+.loading .l3 {
+  animation-delay: 0.3s;
+}
+.loading .l4 {
+  animation-delay: 0.4s;
+}
+.loading .l5 {
+  animation-delay: 0.5s;
+}
+.loading .l6 {
+  animation-delay: 0.6s;
+}
+.loading .l7 {
+  animation-delay: 0.7s;
+}
+.loading .l8 {
+  animation-delay: 0.8s;
+}
+.loading .l9 {
+  animation-delay: 0.9s;
+}
+.loading .l10 {
+  animation-delay: 1s;
+}
+button {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 1em;
+  cursor: pointer;
+}
+    </style>
+    <div class="buttons">
+      <button class="flip">Flip</button>
+      <button class="jump">Jump</button>
+      <button class="rotate">Rotate</button>
+      <button class="color">Color</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(".flip").click(function() {
+        $(".loading>div").css({
+          "animation-name": "flip",
+          "transform-origin": "50% 50% 8px"
+        });
+      });
+      $(".jump").click(function() {
+        $(".loading>div").css("animation-name", "jump");
+      });
+      $(".rotate").click(function() {
+        $(".loading>div").css({
+          "animation-name": "rotate",
+          "transform-origin": "50%"
+        });
+      });
+      $(".color").click(function() {
+        $(".loading>div").css({
+          "animation-name": "color"
+        });
+      });
+    </script>
+  </body>
+</html>
